@@ -20,10 +20,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 8
-    - name: npm install, build, and test
+    - name: npm install, build
       run: |
         npm install
-        npm run build:test --if-present
+        npm run build
     - name: Publish Docker
       uses: elgohr/Publish-Docker-Github-Action@2.11
       with:
