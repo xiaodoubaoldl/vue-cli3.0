@@ -1,5 +1,8 @@
 <template>
   <div class="home">
+    <div>
+      <color-picker v-model="color" @change="onChange"></color-picker>
+    </div>
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
@@ -8,11 +11,23 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
+import { VueColorpicker } from '@firehole/vue-pop-colorpicker'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    HelloWorld,
+    'color-picker': VueColorpicker
+  },
+  data () {
+    return {
+      color: 'green'
+    }
+  },
+  methods: {
+    onChange (color) {
+      console.log(color)
+    }
   }
 }
 </script>
