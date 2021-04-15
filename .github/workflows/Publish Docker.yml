@@ -1,21 +1,41 @@
+
+# 工作流名称
 name: web-CI
+
+# 限定工作流执行的条件
+# 触发条件 branches限定分支
+# push推送到master动作
 
 on:
   push:
     branches:
       - master
 
+# 一个工作流的根节点jobs,以下可以定义多个job
 jobs:
+  # 定义一个名为 build 的job
   build:
-
+    # CI 或 job执行的环境
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
         node-version: [8.x, 10.x, 12.x]
-
+    # job中每一步的任务序列
     steps:
-    - uses: actions/checkout@v1
+    # Job Start
+    - name: Job Start
+      run: echo Hello, GitHub workflows !
+    # 检出你在当前github工作空间的项目
+    - uses: actions/checkout@v2
+    # 执行一个一系列或多行的shell命令
+    # - name: Run a multi-line script
+    #   run: |
+    #     echo Add other actions to build,
+    #     echo test, and deploy your project.
+
+    # 设置Node环境 actions/setup-node@v1 是GitHub Marketplace其中的一个,相当于一个方法
+    # 使用一个Actions 使用uses关键字,  with表明参数
     - name: Use Node.js 8
       uses: actions/setup-node@v1
       with:
@@ -31,8 +51,8 @@ jobs:
         # name: ${{secrets.DOCKER_PROGRAM}}
         name: doubaotest/vuenginxcontainer
         # The login username for the registry
-        username: ${{secrets.DOCKER_USERNAME}}
+        username: ${{secrets.DOCKER_USERNAME_TENCENT}}
         # The login password for the registry
-        password: ${{secrets.DOCKER_PASSWORD}}
+        password: ${{secrets.DOCKER_PASSWORD_TENCENT}}
           # Use registry for pushing to a custom registry
-        # registry: ${{secrets.DOCKER_REGISTRY}}
+        registry: ${{secrets.DOCKER_REGISTRY_TENCENT}}
