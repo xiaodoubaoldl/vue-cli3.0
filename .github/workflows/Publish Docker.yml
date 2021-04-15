@@ -56,3 +56,10 @@ jobs:
         password: ${{secrets.DOCKER_PASSWORD_TENCENT}}
           # Use registry for pushing to a custom registry
         registry: ${{secrets.DOCKER_REGISTRY_TENCENT}}
+    - name: ssh docker login # 使用appleboy/ssh-action@master登录服务器执行拉取镜像脚本，服务器ip、用户名、密码
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST_TENCENT }} 
+        username: ${{ secrets.SSH_USERNAME_TENCENT }}
+        password: ${{ secrets.SSH_PASSWORD_TENCENT }}
+        script: cd ~/sh && sh deploy.sh ${{ secrets.DOCKER_USERNAME_TENCENT }} ${{ secrets.DOCKER_PASSWORD_TENCENT }}

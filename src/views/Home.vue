@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <h1>山炮</h1>
     <div>
       <color-picker v-model="color" @change="onChange"></color-picker>
     </div>
