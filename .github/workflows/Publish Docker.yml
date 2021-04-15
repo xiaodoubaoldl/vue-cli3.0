@@ -49,7 +49,7 @@ jobs:
       with:
         # The name of the image you would like to push
         # name: ${{secrets.DOCKER_PROGRAM}}
-        name: doubaotest/vuenginxcontainer
+        name: lvdongliangtest/vuenginxcontainertencent
         # The login username for the registry
         username: ${{secrets.DOCKER_USERNAME_TENCENT}}
         # The login password for the registry
