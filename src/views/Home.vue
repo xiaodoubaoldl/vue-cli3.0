@@ -1,17 +1,17 @@
 <template>
   <div class="home">
-    <h1>山炮</h1>
     <div>
       <color-picker v-model="color" @change="onChange"></color-picker>
     </div>
-    <img alt="Vue logo" src="../assets/logo.png">
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <div>
+      <el-button type="primary" @click="getData">githubApi</el-button>
+      <el-button type="primary" @click="utils">utils</el-button>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
 import { VueColorpicker } from '@firehole/vue-pop-colorpicker'
 
 export default {
@@ -27,6 +27,16 @@ export default {
   methods: {
     onChange (color) {
       console.log(color)
+    },
+    getData () {
+      this.$http.get('/api/repos/octokit/octokit.rb').then((res) => {
+        console.log(res)
+      }).catch((error) => {
+        console.log(error)
+      })
+    },
+    utils () {
+      console.log(this.$utils.validate('1'))
     }
   }
 }
