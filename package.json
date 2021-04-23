@@ -11,6 +11,7 @@
     "@firehole/vue-pop-colorpicker": "^1.0.5",
     "core-js": "^3.6.5",
     "element-ui": "^2.14.0",
+    "glob": "^7.1.6",
     "vconsole": "^3.3.4",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
