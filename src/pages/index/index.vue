@@ -19,10 +19,7 @@ export default {
       // location.href = `${process.env.BASE_URL}` + name
 
       this.openRouter({
-        name: name,
-        query: {
-          text: 'hello'
-        }
+        name: name
       })
     },
     openRouter ({ query = {}, name = '', type = '' } = {}) {
