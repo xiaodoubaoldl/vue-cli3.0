@@ -11,7 +11,7 @@ module.exports = {
   // assetsDir: "static",
   // outputDir: 'dist',
   // productionSourceMap: true,
-  pages: utils.setPages(),
+  // pages: utils.setPages(),
   chainWebpack: config => {
     config.plugin('define')
       .tap(args => {

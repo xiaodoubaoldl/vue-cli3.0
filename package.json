@@ -10,6 +10,7 @@
   "dependencies": {
     "@firehole/vue-pop-colorpicker": "^1.0.5",
     "core-js": "^3.6.5",
+    "echarts": "^5.1.2",
     "element-ui": "^2.14.0",
     "glob": "^7.1.6",
     "vconsole": "^3.3.4",

@@ -3,10 +3,41 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
+      <!-- <el-button></el-button> -->
     </div>
     <router-view/>
   </div>
 </template>
+<script>
+export default {
+  mounted () {
+    this.bindWindowResize()
+    this.updateBodyFontSize()
+  },
+  beforeDestroy () {
+    this.unbindWindowResize()
+  },
+  methods: {
+    bindWindowResize () {
+      this.unbindWindowResize()
+      window.addEventListener('resize', this._resizeHandler = () => {
+        this.updateBodyFontSize()
+      })
+    },
+    unbindWindowResize () {
+      this._resizeHandler && window.removeEventListener('resize', this._resizeHandler)
+      delete this._resizeHandler
+    },
+
+    updateBodyFontSize () {
+      document.documentElement.style.fontSize = this.getFontSize(20) + 'px'
+    },
+    getFontSize (fontSize) {
+      return (fontSize / 1920) * document.body.clientWidth
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
