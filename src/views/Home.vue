@@ -30,6 +30,12 @@ export default {
       color: 'green',
       chart: null,
       option: {
+        title: {
+          text: '二狗烧饼店'
+        },
+        tooltip: {
+          trigger: 'axis'
+        },
         xAxis: {
           type: 'category',
           data: ['6/18', '6/19', '6/20', '6/21']
