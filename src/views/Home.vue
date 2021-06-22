@@ -32,13 +32,13 @@ export default {
       option: {
         xAxis: {
           type: 'category',
-          data: ['6/18', '6/19', '6/20']
+          data: ['6/18', '6/19', '6/20', '6/21']
         },
         yAxis: {
           type: 'value'
         },
         series: [{
-          data: [18, 28, 31],
+          data: [18, 28, 31, 45],
           type: 'line'
         }]
       }
