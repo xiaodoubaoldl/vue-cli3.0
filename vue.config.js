@@ -1,7 +1,8 @@
 // console.log(process.env.NAME)
 // console.log(process.env)
-const utils = require('./build/utils')
-console.log(utils.setPages())
+// 配置多页面使用
+// const utils = require('./build/utils')
+// console.log(utils.setPages())
 const configs = require('./config')
 const merge = require('webpack-merge')
 const cfg = process.env.NODE_ENV === 'production' ? configs.build.env : configs.dev.env
@@ -19,6 +20,15 @@ module.exports = {
         args[0][name] = merge(args[0][name], cfg)
         return args
       })
+    // 生产环境，开启js\css压缩
+    if (process.env.NODE_ENV === 'production') {
+      config.plugin('compressionPlugin').use(new CompressionPlugin({
+        test: /\.(js|css|less)$/, // 匹配文件名
+        threshold: 10240, // 对超过10k的数据压缩
+        minRatio: 0.8,
+        deleteOriginalAssets: true // 删除源文件
+      }))
+    }
   },
   devServer: {
     // historyApiFallback: {
