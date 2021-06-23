@@ -5,6 +5,7 @@
 // console.log(utils.setPages())
 const configs = require('./config')
 const merge = require('webpack-merge')
+const CompressionPlugin = require("compression-webpack-plugin")
 const cfg = process.env.NODE_ENV === 'production' ? configs.build.env : configs.dev.env
 // const baseUrl = process.env.BASE_URL
 module.exports = {
