@@ -21,7 +21,7 @@ module.exports = {
         args[0][name] = merge(args[0][name], cfg)
         return args
       })
-    // 生产环境，开启js\css压缩
+    // 生产环境，开启js\css压缩ok
     if (process.env.NODE_ENV === 'production') {
       config.plugin('compressionPlugin').use(new CompressionPlugin({
         test: /\.(js|css|less)$/, // 匹配文件名
