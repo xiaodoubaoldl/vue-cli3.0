@@ -27,7 +27,7 @@ module.exports = {
         test: /\.(js|css|less)$/, // 匹配文件名
         threshold: 10240, // 对超过10k的数据压缩
         minRatio: 0.8,
-        deleteOriginalAssets: true // 删除源文件
+        // deleteOriginalAssets: true // 删除源文件
       }))
     }
   },
