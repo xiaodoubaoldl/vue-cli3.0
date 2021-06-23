@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <div id="nav" v-if="$route.name != 'Earth'">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/Earth">灰机啊~</router-link>
       <!-- <el-button></el-button> -->
     </div>
     <router-view/>
@@ -10,6 +10,8 @@
 </template>
 <script>
 export default {
+  created () {
+  },
   mounted () {
     this.bindWindowResize()
     this.updateBodyFontSize()

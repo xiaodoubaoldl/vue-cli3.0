@@ -5,7 +5,7 @@
 // console.log(utils.setPages())
 const configs = require('./config')
 const merge = require('webpack-merge')
-const CompressionPlugin = require("compression-webpack-plugin")
+const CompressionPlugin = require('compression-webpack-plugin')
 const cfg = process.env.NODE_ENV === 'production' ? configs.build.env : configs.dev.env
 // const baseUrl = process.env.BASE_URL
 module.exports = {
@@ -26,7 +26,7 @@ module.exports = {
       config.plugin('compressionPlugin').use(new CompressionPlugin({
         test: /\.(js|css|less)$/, // 匹配文件名
         threshold: 10240, // 对超过10k的数据压缩
-        minRatio: 0.8,
+        minRatio: 0.8
         // deleteOriginalAssets: true // 删除源文件
       }))
     }
@@ -40,11 +40,16 @@ module.exports = {
     open: true, // 配置自动启动浏览器
     // 配置跨域处理
     proxy: {
-      '/api': {
+      '/githubApi': {
         target: 'https://api.github.com',
         ws: true,
         changeOrigin: true,
-        pathRewrite: { '^/api': '' }
+        pathRewrite: { '^/githubApi': '' }
+      },
+      '/support': {
+        target: 'https://www.minedata.cn',
+        ws: true,
+        changeOrigin: true
       }
     }
   }

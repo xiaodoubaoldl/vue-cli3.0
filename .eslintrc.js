@@ -13,5 +13,13 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+  },
+  globals: {
+    minemap: true,
+    prepareData: true,
+    TrackDataUtil: true,
+    binarySeach: true,
+    getInterpolationPos: true,
+    getBearing: true
   }
 }

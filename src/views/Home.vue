@@ -58,7 +58,6 @@ export default {
   },
   methods: {
     initLineChart () {
-      console.log(this.$refs.chart)
       this.chart.setOption(this.option)
       // 添加windowResize事件
       this.addWindowResize(this.chart)
@@ -89,7 +88,7 @@ export default {
       console.log(color)
     },
     getData () {
-      this.$http.get('/api/repos/octokit/octokit.rb').then((res) => {
+      this.$http.get('/githubApi/repos/octokit/octokit.rb').then((res) => {
         console.log(res)
       }).catch((error) => {
         console.log(error)
