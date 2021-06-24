@@ -61,6 +61,8 @@ export default {
       this.chart.setOption(this.option)
       // 添加windowResize事件
       this.addWindowResize(this.chart)
+      // 处理初始化
+      this.resizeContainer()
     },
     addWindowResize (echarts, height = 0) {
       this.resizeHandler && window.removeEventListener('resize', this.resizeHandler)
