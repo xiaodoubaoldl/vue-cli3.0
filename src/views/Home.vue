@@ -8,7 +8,8 @@
       <el-button type="primary" @click="utils">utils</el-button>
     </div>
     <div style="width:50rem;height:50rem">
-      <v-charts ref="chart"></v-charts>
+      <!-- <v-charts ref="chart"></v-charts> -->
+      <component ref="chart" :is="'vCharts'"></component>
     </div>
     <!-- <el-button @click="initLineChart">折线图</el-button> -->
   </div>
@@ -38,13 +39,13 @@ export default {
         },
         xAxis: {
           type: 'category',
-          data: ['6/18', '6/19', '6/20', '6/21', '6/22', '6/23']
+          data: ['6/18', '6/19', '6/20', '6/21', '6/22', '6/23', '6/24']
         },
         yAxis: {
           type: 'value'
         },
         series: [{
-          data: [18, 28, 31, 45, 32, 22],
+          data: [18, 28, 31, 45, 32, 22, 26],
           type: 'line'
         }]
       }
