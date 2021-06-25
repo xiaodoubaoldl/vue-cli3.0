@@ -31,7 +31,7 @@ export default {
       chart: null,
       option: {
         title: {
-          text: '二狗烧饼店'
+          text: '小店'
         },
         tooltip: {
           trigger: 'axis'
