@@ -31,7 +31,7 @@ export default {
       chart: null,
       option: {
         title: {
-          text: '小店1'
+          text: '小店11'
         },
         tooltip: {
           trigger: 'axis'
