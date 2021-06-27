@@ -8,7 +8,7 @@
       <el-button type="primary" @click="utils">utils</el-button>
     </div>
     <div style="width:50rem;height:50rem">
-      <!-- <v-charts ref="chart"></v-charts> -->
+      <!-- <v-charts ref="chart"></v-charts> 更新-->
       <component ref="chart" :is="'vCharts'"></component>
     </div>
     <!-- <el-button @click="initLineChart">折线图</el-button> -->
