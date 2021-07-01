@@ -11,9 +11,14 @@ const routes = [
     component: Home
   },
   {
-    path: '/Earth',
+    path: '/Earth/*',
     name: 'Earth',
     component: () => import(/* webpackChunkName: "Earth" */ '../views/Earth.vue')
+  },
+  {
+    path: '/Map/*',
+    name: 'Map',
+    component: () => import(/* webpackChunkName: "Map" */ '../views/Map.vue')
   }
 ]
 

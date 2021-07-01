@@ -1,4 +1,5 @@
 <template>
+<div>
   <div id="map">
     <button class="btn" id="view" @click="lockHead">全局视角</button>
     <button class="btn" id="track" @click="trackFly">追踪视角</button>
@@ -11,8 +12,14 @@
       <div><span>速度: </span><span id="plane-speed"></span><span> 公里/小时</span></div>
     </div>
   </div>
+  <!-- react微应用挂载DOM -->
+  <div id="container"></div>
+  <button @click="handleMicroInfo">123</button>
+</div>
 </template>
 <script>
+import actions from '../micro/action.js'
+import startQiankun, { registerApp } from '../micro'
 export default {
   data () {
     return {
@@ -31,7 +38,18 @@ export default {
     }
   },
   mounted () {
-    this.initMineMap()
+    // 初始化配置
+    registerApp()
+    startQiankun()
+    // // 注册一个观察者函数
+    // actions.onGlobalStateChange((state, prevState) => {
+    //   // state: 变更后的状态; prevState: 变更前的状态
+    //   console.log('主应用观察者：改变前的值为 ', prevState)
+    //   console.log('主应用观察者：登录状态发生改变，改变后的值为 ', state)
+    // })
+    this.$nextTick(() => {
+      this.initMineMap()
+    })
   },
   methods: {
     initMineMap () {
@@ -145,6 +163,9 @@ export default {
         }
       })
     },
+    handleMicroInfo () {
+      actions.setGlobalState({ map: this.map })
+    },
     // 管理视角
     lockHead () {
       this.tracking = false
@@ -222,7 +243,9 @@ export default {
 </script>
 <style lang="scss" scoped>
   #map {
-    height: 100vh;
+    width: 50vw;
+    height: 50vh;
+    position: relative;
   }
   .btn {
       border: none;

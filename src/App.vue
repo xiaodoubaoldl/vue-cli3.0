@@ -2,7 +2,9 @@
   <div id="app">
     <div id="nav" v-if="$route.name != 'Earth'">
       <router-link to="/">Home</router-link> |
-      <router-link to="/Earth">灰机啊~</router-link>
+      <router-link to="/Earth/">灰机啊~</router-link> |
+      <router-link to="/app-react">react</router-link> |
+      <router-link to="/Map/">map</router-link>
       <!-- <el-button></el-button> -->
     </div>
     <router-view/>

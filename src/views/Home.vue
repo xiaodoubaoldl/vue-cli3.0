@@ -9,7 +9,8 @@
     </div>
     <div style="width:50rem;height:50rem">
       <!-- <v-charts ref="chart"></v-charts> -->
-      <component ref="chart" :is="'vCharts'"></component>
+      <component ref="chart" :is="'vCharts'" :count="count"></component>
+      <component :is="'count'" :count="count"></component>
     </div>
     <!-- <el-button @click="initLineChart">折线图</el-button> -->
   </div>
@@ -19,17 +20,19 @@
 // @ is an alias to /src
 import { VueColorpicker } from '@firehole/vue-pop-colorpicker'
 import vCharts from '../components/echartsInit'
-
+import count from '../components/count.vue'
 export default {
   name: 'Home',
   components: {
     'color-picker': VueColorpicker,
-    vCharts
+    vCharts,
+    count
   },
   data () {
     return {
       color: 'green',
       chart: null,
+      count: 0,
       option: {
         title: {
           text: '小店11'
@@ -52,6 +55,9 @@ export default {
     }
   },
   mounted () {
+    setInterval(() => {
+      this.count++
+    }, 1000)
     this.$refs.chart.ready().then((res) => {
       this.chart = res
       this.initLineChart()
