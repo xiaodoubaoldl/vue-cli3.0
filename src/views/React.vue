@@ -1,7 +1,8 @@
 <template>
   <div>
+    <h1>reactie</h1>
     <!-- react微应用挂载DOM -->
-    <div id="container"></div>
+    <div id="reactie"></div>
   </div>
 </template>
 

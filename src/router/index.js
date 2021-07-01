@@ -19,6 +19,11 @@ const routes = [
     path: '/Map/*',
     name: 'Map',
     component: () => import(/* webpackChunkName: "Map" */ '../views/Map.vue')
+  },
+  {
+    path: '/ReactIe/*',
+    name: 'ReactIe',
+    component: () => import(/* webpackChunkName: "ReactIe" */ '../views/React.vue')
   }
 ]
 

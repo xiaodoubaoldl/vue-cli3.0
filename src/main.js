@@ -1,3 +1,9 @@
+import 'whatwg-fetch'
+import 'custom-event-polyfill'
+import 'core-js/stable/promise'
+import 'core-js/stable/symbol'
+import 'core-js/stable/string/starts-with'
+import 'core-js/web/url'
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
@@ -6,12 +12,6 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import Http from '@/services/http.js'
 import utils from '@/utils'
-import 'whatwg-fetch'
-import 'custom-event-polyfill'
-import 'core-js/stable/promise'
-import 'core-js/stable/symbol'
-import 'core-js/stable/string/starts-with'
-import 'core-js/web/url'
 // 如果是非正式环境，加载 VConsole
 // if (process.env.NODE_ENV !== 'production') {
 //   var VConsole = require('vconsole/dist/vconsole.min.js')

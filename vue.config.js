@@ -9,9 +9,7 @@ const CompressionPlugin = require('compression-webpack-plugin')
 const cfg = process.env.NODE_ENV === 'production' ? configs.build.env : configs.dev.env
 // const baseUrl = process.env.BASE_URL
 module.exports = {
-  transpileDependencies: [
-    'single-spa'
-  ],
+  transpileDependencies: ['single-spa','qiankun','import-html-entry'],
   // publicPath: "/vue",
   // assetsDir: "static",
   // outputDir: 'dist',
