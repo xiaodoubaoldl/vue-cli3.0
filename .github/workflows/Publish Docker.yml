@@ -45,7 +45,7 @@ jobs:
         npm install
         npm run build
     - name: Publish Docker
-      uses: elgohr/Publish-Docker-Github-Action@2.11
+      uses: elgohr/Publish-Docker-Github-Action@v5
       with:
         # The name of the image you would like to push
         # name: ${{secrets.DOCKER_PROGRAM}}
